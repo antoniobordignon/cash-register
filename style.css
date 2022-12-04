@@ -19,7 +19,7 @@ section {
 }
 
 div {
-    text-align: center
+    text-align: center;
 }
 
 footer {
@@ -35,15 +35,28 @@ input {
     border: .2em solid white;
     background-color: rgb(59, 59, 79);
     color: rgb(223, 223, 226);
+    size: 50px
 }
+
+#table {  
+    width: 100%
+}
+
+table {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: .5em;
+}
+
+td {
+    min-width: 11em;
+  }
+
 
 @media (max-width: 800px) {
     section {
         width: 17em
-    }
-
-    #checker {
-
     }
 }
 
