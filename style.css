@@ -22,21 +22,22 @@ div {
     text-align: center;
 }
 
-footer {
-    color: rgb(223, 223, 226);
-    text-align: center;
-    font-style: italic;
-    position: absolute;
-    bottom: 0;
-    width: 99%;
+#img {
+    margin-bottom: 1.25em;
 }
 
 input {
     border: .2em solid white;
     background-color: rgb(59, 59, 79);
     color: rgb(223, 223, 226);
-    size: 50px
 }
+
+#button {
+    background-color: rgb(10, 10, 35);
+    padding: .5em .9em;
+    margin-top: .5em;
+}
+
 
 #table {  
     width: 100%
@@ -53,6 +54,12 @@ td {
     min-width: 11em;
   }
 
+footer {
+    color: rgb(223, 223, 226);
+    text-align: center;
+    font-style: italic;
+    margin-top: 5em ; 
+}
 
 @media (max-width: 800px) {
     section {
