@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="cash-register.js"></script>
     <link rel="stylesheet" href="style.css"></link>
     <title>Cash Register</title>
 </head>
@@ -73,7 +74,7 @@
                 <input type="string" id="string" />
             </p>
             <p>
-                <input id="button" type="button" value="Calculate the change due" id="converter" onclick="rot13()" />
+                <input id="button" type="button" value="Calculate the change due" id="converter" onclick="checkCashRegister()" />
             </p>
         </div>
         <div id="answer">
@@ -84,6 +85,5 @@
     <footer>
         <p>&copy; FreeCodeCamp</p>
     </footer>
-    <script src="telephone-number-validator.js"></script>   
 </body>
 </html>
