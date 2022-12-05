@@ -28,7 +28,11 @@ div {
 input {
     border: .2em solid white;
     background-color: rgb(59, 59, 79);
-    color: rgb(223, 223, 226);
+    color: rgb(223, 223, 226);e
+}
+
+input::placeholder{
+    color: rgb(223, 223, 226)
 }
 
 #button {
