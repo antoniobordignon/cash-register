@@ -90,4 +90,8 @@ footer {
     section {
         width: 10em;
     }
+
+    #answer {
+        font-size: .8em;
+    }
 }
