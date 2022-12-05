@@ -2,6 +2,29 @@
 
 
 function checkCashRegister(price, cash, cid) {
+  let pennyValue = document.getElementById('penny')
+  let penny = Number(pennyValue.value)
+  let nickelValue = document.getElementById('nickel')
+  let nickel = Number(nickelValue.value)
+  let dimeValue = document.getElementById('dime')
+  let dime = Number(dimeValue.value)
+  let quarterValue = document.getElementById('quarter')
+  let quarter = Number(quarterValue.value)
+  let oneValue = document.getElementById('one')
+  let one = Number(oneValue.value)
+  let fiveValue = document.getElementById('five')
+  let five = Number(fiveValue.value)
+  let tenValue = document.getElementById('ten')
+  let ten = Number(tenValue.value)
+  let twentyValue = document.getElementById('twenty')
+  let twenty = Number(twentyValue.value)
+  let oneHundredValue = document.getElementById('oneHundred')
+  let oneHundred = Number(oneHundredValue.value)
+  let productsValue = document.getElementById('products')
+  let products = Number(productsValue.value)
+  let cashReceivedValue = document.getElementById('cashReceived')
+  let cashReceived = Number(cashReceivedValue.value)
+
   let change = cash*100 - price*100;
   let cidTotal = 0;
   for (let elem of cid){
