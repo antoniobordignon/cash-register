@@ -17,33 +17,39 @@ function checkCashRegister() {
 
   let change = cashReceived*100 - productsPrice*100;
   let cidTotal = 0;
-  for (let elem of cid){
-    cidTotal += elem[1]*100
-  } 
-  if (change > cidTotal){
-    return answerHtml.innerHTML = 'status: "INSUFFICIENT_FUNDS", change: 0'
-  } else if (change === cidTotal) {
-    return answerHtml.innerHTML = `status: "CLOSED", change: ${cid}`
-  } else {
-    let answer = []
-    cid=cid.reverse()
-    let moneyUnits = {' ONE HUNDRED': 10000, ' TWENTY': 2000, ' TEN': 1000, ' FIVE': 500,' ONE': 100, ' QUARTER': 25, ' DIME': 10, ' NICKEL': 5, 'PENNY': 1}
-    for (let elem of cid){
-      let holder = [elem[0], 0]
-      elem[1]=elem[1]*100
-      while (change >= moneyUnits[elem[0]] && elem[1] > 0){
-        change -= moneyUnits[elem[0]]
-        elem[1] -= moneyUnits[elem[0]]
-        holder[1] += moneyUnits[elem[0]]/100
-      }
-      if (holder[1]>0){
-        answer.push(holder)
-      }
-    }
-    if (change > 0){
-      return answerHtml.innerHTML =  'status: "INSUFFICIENT_FUNDS", change: 0'
-    }
-      return answerHtml.innerHTML = `status: "OPEN", change: ${answer}`
 
+  if (productsPrice > cashReceived) {
+    return answerHtml.innerHTML = 'The money received is insufficient to pay for the products.'
+  } else {
+    for (let elem of cid){
+      cidTotal += elem[1]*100
+    } 
+    if (change > cidTotal){
+      return answerHtml.innerHTML = 'status: "INSUFFICIENT_FUNDS", change: 0'
+    } else if (change === cidTotal) {
+      return answerHtml.innerHTML = `status: "CLOSED", change: ${cid}`
+    } else {
+      let answer = []
+      cid=cid.reverse()
+      let moneyUnits = {' ONE HUNDRED': 10000, ' TWENTY': 2000, ' TEN': 1000, ' FIVE': 500,' ONE': 100, ' QUARTER': 25, ' DIME': 10, ' NICKEL': 5, 'PENNY': 1}
+      for (let elem of cid){
+        let holder = [elem[0], 0]
+        elem[1]=elem[1]*100
+        while (change >= moneyUnits[elem[0]] && elem[1] > 0){
+          change -= moneyUnits[elem[0]]
+          elem[1] -= moneyUnits[elem[0]]
+          holder[1] += moneyUnits[elem[0]]/100
+        }
+        if (holder[1]>0){
+          answer.push(holder)
+        }
+      }
+      if (change > 0){
+        return answerHtml.innerHTML =  'status: "INSUFFICIENT_FUNDS", change: 0'
+      }
+        return answerHtml.innerHTML = `status: "OPEN", change: ${answer}`
+  
+    }
   }
 }
+ 
